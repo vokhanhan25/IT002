@@ -1,15 +1,15 @@
-#include "iostream"
-#include "PhanSo.cpp"
+#include <iostream>
+#include "SoPhuc.cpp"
 
 using namespace std;
 
 int main()
 {
-    PhanSo a, b, res;
+    SoPhuc a, b, res;
     a.rf();
-    cout << a.dinhGiaTri() << endl;
+    cout << a.pabs() << endl;
     b.rf();
-    cout << b.dinhGiaTri() << endl;
+    cout << b.pabs() << endl;
 
     res = a.tong(b);
     res.wf();
