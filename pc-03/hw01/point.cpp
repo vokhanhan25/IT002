@@ -32,3 +32,21 @@ void POINT::Move(const int &xx, const int &yy) {
     y = y + yy;
 }
 
+POINT::POINT() {
+    x = y = 0;
+}
+
+POINT::POINT(const POINT &a) {
+    x = a.x;
+    y = a.y;
+}
+
+POINT::POINT(int xx, int yy) {
+    x = xx;
+    y = yy;
+}
+
+POINT::~POINT() {
+    cout << "DESTRUCTER DUOC GOI!\n";
+}
+

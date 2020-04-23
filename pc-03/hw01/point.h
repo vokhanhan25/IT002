@@ -6,6 +6,10 @@ class POINT
     public:
         void Input();
         void Output();
+        POINT();
+        POINT(const POINT &);
+        POINT (int, int);
+        ~POINT();
         void SetX(const int &);
         void SetY(const int &);
         int GetX();
