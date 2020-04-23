@@ -4,30 +4,33 @@
 using namespace std;
 
 void POINT::Input() {
-    cin >> x >> y;
+    cout << "X = ";
+    cin >> x;
+    cout << "Y = ";
+    cin >> y;
 }
 
 void POINT::Output() {
     cout << x << " " << y << "\n";
 }
 
-void POINT::SetX(const int &val) {
+void POINT::SetX(const double &val) {
     x = val;
 }
 
-void POINT::SetY(const int &val) {
+void POINT::SetY(const double &val) {
     y = val;
 }
 
-int POINT::GetX() {
+double POINT::GetX() {
     return x;
 }
 
-int POINT::GetY() {
+double POINT::GetY() {
     return y;
 }
 
-void POINT::Move(const int &xx, const int &yy) {
+void POINT::Move(const double &xx, const double &yy) {
     x = x + xx;
     y = y + yy;
 }
@@ -41,12 +44,12 @@ POINT::POINT(const POINT &a) {
     y = a.y;
 }
 
-POINT::POINT(int xx, int yy) {
+POINT::POINT(double xx, double yy) {
     x = xx;
     y = yy;
 }
 
 POINT::~POINT() {
-    cout << "DESTRUCTER DUOC GOI!\n";
+    return;
 }
 
