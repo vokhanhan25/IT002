@@ -5,30 +5,34 @@
 using namespace std;
 
 void POINT::Input() {
-    cin >> x >> y;
+    cout << "X = ";
+    cin >> x;
+    cout << "Y = ";
+    cin >> y;
+    cout << "\n";
 }
 
 void POINT::Output() {
     cout << x << " " << y << "\n";
 }
 
-void POINT::SetX(const int &val) {
+void POINT::SetX(const double &val) {
     x = val;
 }
 
-void POINT::SetY(const int &val) {
+void POINT::SetY(const double &val) {
     y = val;
 }
 
-int POINT::GetX() {
+double POINT::GetX() {
     return x;
 }
 
-int POINT::GetY() {
+double POINT::GetY() {
     return y;
 }
 
-void POINT::Move(const int &xx, const int &yy) {
+void POINT::Move(const double &xx, const double &yy) {
     x = x + xx;
     y = y + yy;
 }
@@ -42,13 +46,13 @@ POINT::POINT(const POINT &a) {
     y = a.y;
 }
 
-POINT::POINT(int xx, int yy) {
+POINT::POINT(double xx, double yy) {
     x = xx;
     y = yy;
 }
 
 POINT::~POINT() {
-    cout << "DESTRUCTER DUOC GOI!\n";
+    return;
 }
 
 void POINT::Rotate(const double &rad) {
@@ -57,6 +61,7 @@ void POINT::Rotate(const double &rad) {
 }
 
 void TRIANGLE::Input() {
+    cout << "NHAP TAM GIAC \n";
     a.Input();
     b.Input();
     c.Input();
@@ -66,9 +71,10 @@ void TRIANGLE::Output() {
     a.Output();
     b.Output();
     c.Output();
+    cout << "\n";
 }
 
-void TRIANGLE::Move(const int &xx, const int &yy) {
+void TRIANGLE::Move(const double &xx, const double &yy) {
     a.Move(xx, yy);
     b.Move(xx, yy);
     c.Move(xx, yy);
@@ -108,6 +114,5 @@ TRIANGLE::TRIANGLE(POINT x, POINT y, POINT z) {
 }
 
 TRIANGLE::~TRIANGLE() {
-    cout << "DESTRUCTER DUOC GOI!\n";
     return;
 }

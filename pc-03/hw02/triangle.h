@@ -7,13 +7,13 @@ class POINT {
         void Output();
         POINT();
         POINT(const POINT &);
-        POINT (int, int);
+        POINT (double, double);
         ~POINT();
-        void SetX(const int &);
-        void SetY(const int &);
-        int GetX();
-        int GetY();
-        void Move(const int &, const int &);
+        void SetX(const double &);
+        void SetY(const double &);
+        double GetX();
+        double GetY();
+        void Move(const double &, const double &);
         void Rotate(const double &);
 };
 
@@ -28,10 +28,10 @@ class TRIANGLE {
         TRIANGLE (POINT, POINT, POINT);
         ~TRIANGLE();
         void SetX(const int &);
-        void SetY(const int &);
-        int GetX();
-        int GetY();
-        void Move(const int &, const int &);
+        void SetY(const double &);
+        double GetX();
+        double GetY();
+        void Move(const double &, const double &);
         void Rotate(const double &);
         void Zoom (const double &);
 };
