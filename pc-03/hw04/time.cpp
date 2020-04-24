@@ -43,3 +43,23 @@ void TIME::Dec() {
         h += 24;
 }
 
+TIME::TIME() {
+    h = m = s = 0;
+}
+
+TIME::TIME(const int &hh, const int &mm, const int &ss) {
+    h = hh;
+    m = mm;
+    s = ss;
+}
+
+TIME::TIME (const TIME &x) {
+    h = x.h;
+    m = x.m;
+    s = x.s;
+}
+
+TIME::~TIME() {
+    return;
+}
+

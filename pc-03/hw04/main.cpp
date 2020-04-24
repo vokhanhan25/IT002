@@ -5,6 +5,8 @@ using namespace std;
 
 int main() {
     TIME a;
+    a.Output();
+    
     a.Input();
     a.Output();
 
