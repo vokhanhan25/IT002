@@ -5,14 +5,14 @@
 using namespace std;
 
 void POINT::Input() {
-    cout << "X = ";
+    cout << "x = ";
     cin >> x;
-    cout << "Y = ";
+    cout << "y = ";
     cin >> y;
 }
 
 void POINT::Output() {
-    cout << x << " " << y << "\n";
+    cout << "(x, y) = " << "(" << x << ", " << y << ")\n";
 }
 
 void POINT::SetX(const double &val) {
