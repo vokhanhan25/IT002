@@ -39,7 +39,7 @@ POLYNOMIAL POLYNOMIAL::Add(const POLYNOMIAL &x) {
 POLYNOMIAL POLYNOMIAL::Subtract(const POLYNOMIAL &x) {
     POLYNOMIAL res;
     res.n = max(n, x.n);
-    for (int i = 0; i < max(n, x.n); i++) 
+    for (int i = 0; i < res.n; i++) 
         res.coefficient[i] = coefficient[i] - x.coefficient[i];
     return res;
 }
@@ -50,7 +50,7 @@ POLYNOMIAL POLYNOMIAL::Multiply(const POLYNOMIAL &x) {
     for (int i = 0; i < n; i++)
         for (int j = 0; j < x.n; j++) {
             int k = i + j;
-            res.coefficient[k] = coefficient[i] * x.coefficient[j];
+            res.coefficient[k] += coefficient[i] * x.coefficient[j];
         }
     return res;
 }
