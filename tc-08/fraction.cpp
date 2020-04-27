@@ -6,19 +6,23 @@ class FRACTION {
     private:
         int x, y;
     public:
-        void Input();
-        void Output();
+        friend istream& operator >> (istream &, FRACTION &);
+        friend ostream& operator << (ostream &, const FRACTION &);
         FRACTION operator + (const FRACTION &);
         FRACTION operator - (const FRACTION &);
         FRACTION operator * (const FRACTION &);
 };
 
-void FRACTION::Input() {
-    cin >> x >> y;
+istream& operator >> (istream &is, FRACTION &a) {
+    cout << "Tu so = ";
+    is >> a.x;
+    cout << "Mau so = ";
+    is >> a.y;
+    return is;
 }
 
-void FRACTION::Output() {
-    cout << x << "/" << y << endl;
+ostream& operator << (ostream &os, const FRACTION &a) {
+    os << a.x << "/" << a.y << "\n";
 }
 
 FRACTION FRACTION::operator +(const FRACTION &a) {
@@ -45,14 +49,13 @@ FRACTION FRACTION::operator *(const FRACTION &a) {
 
 int main() {
     FRACTION a, b;
-    a.Input();
-    b.Input();
+    cin >> a >> b;
     FRACTION res = a + b;
-    res.Output();
+    cout << res;
 
     res = a - b;
-    res.Output();
+    cout << res;
 
     res = a * b;
-    res.Output();
+    cout << res;
 }
