@@ -12,7 +12,9 @@ class POINT
         ~POINT();
         void SetX(const double &);
         void SetY(const double &);
+        void SetXY (const double &, const double &);
         double GetX();
         double GetY();
         void Move(const double &, const double &);
+        double GetDistance(const POINT &);
 };
