@@ -23,6 +23,7 @@ istream& operator >> (istream &is, FRACTION &a) {
 
 ostream& operator << (ostream &os, const FRACTION &a) {
     os << a.x << "/" << a.y << "\n";
+    return os;
 }
 
 FRACTION FRACTION::operator +(const FRACTION &a) {
