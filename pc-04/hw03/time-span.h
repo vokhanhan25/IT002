@@ -12,6 +12,6 @@ class CTimeSpan {
         ~CTimeSpan();
         friend istream& operator >>(istream &, CTimeSpan &);
         friend ostream& operator <<(ostream &, const CTimeSpan &);
-        CTimeSpan operator +(const CTimeSpan &a);
-        CTimeSpan operator -(const CTimeSpan &a);
+        CTimeSpan operator +(const CTimeSpan &);
+        CTimeSpan operator -(const CTimeSpan &);
 };
