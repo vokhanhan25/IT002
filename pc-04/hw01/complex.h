@@ -6,7 +6,7 @@ class COMPLEX{
     private:
         double real, imaginary;
     public:
-        COMPLEX();
+        COMPLEX(int );
         friend istream& operator >> (istream &, COMPLEX &);
         friend ostream& operator << (ostream &, const COMPLEX &);
         COMPLEX operator + (const COMPLEX &);

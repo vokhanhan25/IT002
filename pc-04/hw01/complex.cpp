@@ -4,8 +4,9 @@
 
 using namespace std;
 
-COMPLEX::COMPLEX() {
-    real = 1;
+
+COMPLEX::COMPLEX(int a = 0) {
+    real = a;
     imaginary = 0;
 }
 
