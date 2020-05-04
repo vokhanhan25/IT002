@@ -6,9 +6,7 @@ class FRACTION {
     private:
         int x, y;
     public:
-        FRACTION ();
-        FRACTION (const FRACTION &);
-        FRACTION (const int &, const int &);
+        FRACTION (int );
         friend istream& operator >> (istream &, FRACTION &);
         friend ostream& operator << (ostream &, const FRACTION &);
         FRACTION operator + (const FRACTION &);

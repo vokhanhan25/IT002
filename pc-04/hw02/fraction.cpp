@@ -9,16 +9,10 @@ int Gcd (int a, int b) {
     return Gcd(b, a % b);
 }
 
-FRACTION::FRACTION(const int &a) {
+FRACTION::FRACTION(int a = 0) {
     x = a;
-    y = 0;
+    y = 1;
 }
-
-FRACTION::FRACTION(const int &a, const int &b) {
-    x = a;
-    y = b;
-}
-
 
 istream& operator >> (istream &is, FRACTION &a) {
     cout << "Tu so = ";
