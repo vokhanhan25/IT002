@@ -4,6 +4,22 @@ CTimeSpan::CTimeSpan() {
     h = m = s = 0;
 }
 
+CTimeSpan::CTimeSpan(const int &hh, const int &mm, const int &ss) {
+    h = hh;
+    m = mm;
+    s = ss;
+}
+
+CTimeSpan::CTimeSpan (const CTimeSpan &x) {
+    h = x.h;
+    m = x.m;
+    s = x.s;
+}
+
+CTimeSpan::~CTimeSpan() {
+    return;
+}
+
 istream& operator>>(istream &is, CTimeSpan &a) {
     cout << "Gio = ";
     is >> a.h;
