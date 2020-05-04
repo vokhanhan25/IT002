@@ -34,21 +34,19 @@ CTime CTime::operator+(const CTime &a) {
 }
 
 CTimeSpan CTime::operator-(const CTime &a) {
-    CTime tm;
+    CTimeSpan tm;
 
-    tm.s = s - a.s;
-    while (tm.s < 0) {
-        tm.m --;
-        tm.s += 60;
+    tm.SetS(s - a.s);
+    while (tm.GetS() < 0) {
+        tm.SetM(tm.GetM() - 1);
+        tm.SetS(tm.GetS() + 60);
     }
 
-    tm.m += m - a.m;
-    while (tm.m < 0) {
-        tm.h--;
-        tm.m += 60;
+    tm.SetM(tm.GetM() + m - a.m);
+    while (tm.GetM() < 0) {
+        tm.SetH(tm.GetH() - 1);
+        tm.SetM(tm.GetM() + 60);
     }
-
-    tm.h += h - a.h;
-
+    tm.SetH(tm.GetH() + h - a.h);
     return tm;
 }

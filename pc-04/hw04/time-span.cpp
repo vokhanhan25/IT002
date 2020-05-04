@@ -51,3 +51,28 @@ CTimeSpan CTimeSpan::operator-(const CTimeSpan &a) {
 
     return tm;
 }
+
+void CTimeSpan::SetS(const int &a) {
+    s = a;
+}
+
+void CTimeSpan::SetM(const int &a) {
+    m = a;
+}
+
+void CTimeSpan::SetH(const int &a) {
+    h = a;
+}
+
+int CTimeSpan::GetS() {
+    return s;
+}
+
+int CTimeSpan::GetM() {
+    return m;
+}
+
+int CTimeSpan::GetH() {
+    return h;
+}
+
