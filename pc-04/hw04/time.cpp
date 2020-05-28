@@ -20,32 +20,38 @@ ostream& operator<<(ostream &os, const CTime &a) {
     return os;
 }
 
-void CTime::operator+(const int &ss) {
-    s += ss;
+CTime CTime::operator+(const int &ss) {
+    CTime tm;
+    tm.s = s + ss;
     
-    m += s / 60;
-    s %= 60;
+    tm.m = m +  tm.s / 60;
+    tm.s %= 60;
 
-    h += m / 60;
-    m %= 60;
+    tm.h = h + tm.m / 60;
+    tm.m %= 60;
 
-    h %= 24;
+    tm.h %= 24;
+    
+    return tm;
 }
 
-void CTime::operator-(const int &ss) {
-    s -= ss;
-    while (s < 0) {
-        m--;
-        s += 60;
+CTime CTime::operator-(const int &ss) {
+    CTime tm;
+    tm.s = s - ss;
+    while (tm.s < 0) {
+        tm.m --;
+        tm.s += 60;
     }
 
-    while (m < 0) {
-        h--;
-        m += 60;
+    tm.m += m ;
+    while (tm.m < 0) {
+        tm.h--;
+        tm.m += 60;
     }
 
-    while (h < 0)
-        h += 24;
+    tm.h += h;
+    tm.h %= 24;
+    return tm;
 }
 
 CTimeSpan CTime::operator-(const CTime &a) {

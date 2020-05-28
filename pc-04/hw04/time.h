@@ -7,8 +7,8 @@ class CTime {
         CTime();
         friend istream& operator >>(istream &, CTime &);
         friend ostream& operator <<(ostream &, const CTime &);
-        void operator+(const int &);
-        void operator-(const int &);
+        CTime operator+(const int &);
+        CTime operator-(const int &);
         CTimeSpan operator-(const CTime &);
         void operator++();
         void operator--();

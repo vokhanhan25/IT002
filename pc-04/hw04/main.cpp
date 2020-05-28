@@ -4,18 +4,18 @@
 using namespace std;
 
 int main () {
-    CTime a, b, c;
+    CTime a, b;
     cin >> a >> b;
 
     int ss;
     cout << "Nhap so nguyen giay can them = ";
     cin >> ss;
-    a + ss;
+    a = a + ss;
     cout << a << "\n";
 
     cout << "Nhap so nguyen giay can giam: ";
     cin >> ss;
-    a - ss;
+    a = a - ss;
     cout << a << "\n"; 
 
     ++a;
