@@ -1,4 +1,4 @@
-#include "time-span.h"
+#include "time.h"
 
 CTimeSpan::CTimeSpan() {
     h = m = s = 0;

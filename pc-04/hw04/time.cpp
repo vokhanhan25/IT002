@@ -1,4 +1,4 @@
-#include "time.h"
+//#include "time.h"
 #include "time-span.cpp"
 
 CTime::CTime() {
@@ -20,16 +20,28 @@ ostream& operator<<(ostream &os, const CTime &a) {
     return os;
 }
 
-CTime CTime::operator+(const CTime &a) {
-    CTime tm;
-    tm.s = s + a.s;
+void CTime::operator+(const int &ss) {
+    s += ss;
     
-    tm.m = m + a.m + tm.s / 60;
-    tm.s %= 60;
+    m += s / 60;
+    s %= 60;
 
-    tm.h = h + a.h + tm.m / 60;
-    tm.m %= 60;
-    
+    h += m / 60;
+    m %= 60;
+}
+
+void CTime::operator-(const int &ss) {
+    s -= ss;
+    while (s < 0) {
+        m--;
+        s += 60;
+    }
+
+    while (m < 0) {
+        tm.SetH(tm.GetH() - 1);
+        tm.SetM(tm.GetM() + 60);
+    }
+    tm.SetH(tm.GetH() + h - a.h);
     return tm;
 }
 
@@ -50,3 +62,30 @@ CTimeSpan CTime::operator-(const CTime &a) {
     tm.SetH(tm.GetH() + h - a.h);
     return tm;
 }
+
+// CTime CTime::operator++() {
+//     s++;
+//     m += s / 60;
+//     s %= 60;
+
+//     h += m / 60;
+//     m %= 60;
+
+//     h %= 24;
+// }
+
+// void TIME::Dec() {
+//     s--;
+//     if (s < 0) {
+//         m--;
+//         s += 60;
+//     }
+
+//     if (m < 0) {
+//         h--;
+//         m += 60;
+//     }
+
+//     if (h < 0) 
+//         h += 24;
+// }

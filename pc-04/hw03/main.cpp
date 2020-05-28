@@ -6,7 +6,7 @@ int main() {
     
     CTimeSpan res = a + b;
     cout << res << "\n";
-
+    
     res = a - b;
     cout << res << "\n";
 }

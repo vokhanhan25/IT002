@@ -1,9 +1,5 @@
 #include "time-span.h"
 
-CTimeSpan::CTimeSpan() {
-    h = m = s = 0;
-}
-
 istream& operator>>(istream &is, CTimeSpan &a) {
     cout << "Gio = ";
     is >> a.h;
@@ -50,4 +46,24 @@ CTimeSpan CTimeSpan::operator-(const CTimeSpan &a) {
     tm.h += h - a.h;
 
     return tm;
+}
+
+CTimeSpan::CTimeSpan() {
+    h = m = s = 0;
+}
+
+CTimeSpan::CTimeSpan(const int &a, const int &b, const int &c) {
+    h = a;
+    m = b;
+    s = c;
+}
+
+CTimeSpan::CTimeSpan(const CTimeSpan &a) {
+    h = a.h;
+    m = a.m;
+    s = a.s;
+}
+
+CTimeSpan::~CTimeSpan() {
+    return;
 }
