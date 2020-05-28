@@ -16,7 +16,7 @@ istream& operator>>(istream &is, CTime &a) {
 }
 
 ostream& operator<<(ostream &os, const CTime &a) {
-    os <<"TIME SPAN: " << a.h << " gio " << a.m << " phut " << a.s << " giay"; 
+    os <<"TIME: " << a.h << " gio " << a.m << " phut " << a.s << " giay"; 
     return os;
 }
 
@@ -28,6 +28,8 @@ void CTime::operator+(const int &ss) {
 
     h += m / 60;
     m %= 60;
+
+    h %= 24;
 }
 
 void CTime::operator-(const int &ss) {
@@ -38,11 +40,12 @@ void CTime::operator-(const int &ss) {
     }
 
     while (m < 0) {
-        tm.SetH(tm.GetH() - 1);
-        tm.SetM(tm.GetM() + 60);
+        h--;
+        m += 60;
     }
-    tm.SetH(tm.GetH() + h - a.h);
-    return tm;
+
+    while (h < 0)
+        h += 24;
 }
 
 CTimeSpan CTime::operator-(const CTime &a) {
@@ -63,29 +66,30 @@ CTimeSpan CTime::operator-(const CTime &a) {
     return tm;
 }
 
-// CTime CTime::operator++() {
-//     s++;
-//     m += s / 60;
-//     s %= 60;
 
-//     h += m / 60;
-//     m %= 60;
+void CTime::operator++() {
+    s++;
+    m += s / 60;
+    s %= 60;
 
-//     h %= 24;
-// }
+    h += m / 60;
+    m %= 60;
 
-// void TIME::Dec() {
-//     s--;
-//     if (s < 0) {
-//         m--;
-//         s += 60;
-//     }
+    h %= 24;
+}
 
-//     if (m < 0) {
-//         h--;
-//         m += 60;
-//     }
+void CTime::operator--() {
+    s--;
+    if (s < 0) {
+        m--;
+        s += 60;
+    }
 
-//     if (h < 0) 
-//         h += 24;
-// }
+    if (m < 0) {
+        h--;
+        m += 60;
+    }
+
+    if (h < 0) 
+        h += 24;
+}
