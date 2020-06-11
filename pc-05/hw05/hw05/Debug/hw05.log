@@ -1,0 +1,9 @@
+﻿  main.cpp
+C:\Users\HP ASUS\source\repos\hw05\hw05\main.cpp(3,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Users\HP ASUS\source\repos\hw05\hw05\main.cpp(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Users\HP ASUS\source\repos\hw05\hw05\main.cpp(5,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  RECTANGLE.cpp
+  SQUARE.cpp
+  TRAPEZOID.cpp
+  Generating Code...
+  hw05.vcxproj -> C:\Users\HP ASUS\source\repos\hw05\Debug\hw05.exe
