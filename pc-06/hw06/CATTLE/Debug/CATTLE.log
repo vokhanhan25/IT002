@@ -1,0 +1,11 @@
+﻿  CATTLE.cpp
+D:\Code\CPP\IT002\pc-06\hw06\CATTLE\CATTLE.cpp(11,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  COW.cpp
+D:\Code\CPP\IT002\pc-06\hw06\CATTLE\COW.cpp(17,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  GOAT.cpp
+D:\Code\CPP\IT002\pc-06\hw06\CATTLE\GOAT.cpp(17,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  main.cpp
+  SHEEP.cpp
+D:\Code\CPP\IT002\pc-06\hw06\CATTLE\SHEEP.cpp(17,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Generating Code...
+  CATTLE.vcxproj -> D:\Code\CPP\IT002\pc-06\hw06\Debug\CATTLE.exe
